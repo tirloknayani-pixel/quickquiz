@@ -1,0 +1,10 @@
+{
+  "name": "quickquiz-v1",
+  "version": "1.0.1",
+  "private": true,
+  "description": "Dependency-free 2\u20136 player multiplayer quiz game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
