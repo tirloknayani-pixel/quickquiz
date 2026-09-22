@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>QuickQuiz</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main id="app">
+  <section id="home" class="screen">
+    <div class="logo">⚡ QuickQuiz</div>
+    <p class="tag">Fast questions. Friendly competition.</p>
+    <div class="card">
+      <button id="createBtn" class="primary">Create Room</button>
+      <div class="or">or</div>
+      <input id="roomInput" maxlength="4" placeholder="ROOM CODE" autocomplete="off">
+      <input id="nameInput" maxlength="18" placeholder="Your nickname" autocomplete="off">
+      <button id="joinBtn" class="secondary">Join Room</button>
+      <p id="error" class="error"></p>
+    </div>
+  </section>
+
+  <section id="lobby" class="screen hidden">
+    <div class="topbar"><button class="back" onclick="location.reload()">←</button><span>Lobby</span></div>
+    <div class="codebox">ROOM CODE <strong id="roomCode"></strong></div>
+    <div class="card">
+      <h2>Players <span id="playerCount"></span></h2>
+      <div id="players" class="players"></div>
+      <button id="startBtn" class="primary">Start Quiz</button>
+      <p class="hint">Share the room code with your friends.</p>
+      <p id="lobbyError" class="error"></p>
+    </div>
+  </section>
+
+  <section id="quiz" class="screen hidden">
+    <div class="topbar"><span id="progress"></span><span class="score">⭐ <b id="myScore">0</b></span></div>
+    <div class="timer"><div id="timerBar"></div></div>
+    <div class="question card">
+      <div class="qnum" id="qnum"></div>
+      <h1 id="question"></h1>
+      <div id="answers" class="answers"></div>
+      <div id="waiting" class="waiting hidden">Answer submitted ✓<br><small>Waiting for everyone…</small></div>
+    </div>
+  </section>
+
+  <section id="results" class="screen hidden">
+    <div class="trophy">🏆</div>
+    <h1>Game Over!</h1>
+    <p class="tag">Final leaderboard</p>
+    <div id="leaderboard" class="card leaderboard"></div>
+    <button id="againBtn" class="primary">Play Again</button>
+    <button onclick="location.reload()" class="secondary">Leave Room</button>
+  </section>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
