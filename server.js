@@ -29,6 +29,7 @@ function send(res, code, body, type="text/plain") {
 
 const server = http.createServer((req,res) => {
   let url = new URL(req.url, `http://${req.headers.host}`);
+    if (url.pathname.startsWith("/api/") || url.pathname === "/events") return;
   let file = url.pathname === "/" ? "/index.html" : url.pathname;
   const safe = path.normalize(file).replace(/^(\.\.[\/\\])+/, "");
   const full = path.join(publicDir, safe);
